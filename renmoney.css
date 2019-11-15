@@ -1,0 +1,52 @@
+body{
+  background-color: lemonchiffon !important;
+}
+
+/* Navbar */
+.navbar{
+  background-color: aqua;
+  /* position: fixed; */
+  z-index: 1;
+
+}
+
+.navbar-nav{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.navbar-nav li{
+  margin-left: 2em;
+}
+
+.nav-link{
+font-size: 18px;
+color: #F05822;
+}
+
+.navbar-brand{
+  transition: transform 0.3s ease-out;
+}
+
+/* Carousel */
+.carousel-inner{
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control{
+  margin-top: 15%;
+}
+
+.caption{
+  padding: 9%;
+}
+
+.sideInfo{
+  font-size: 200%;
+}
+
+/* Calculator */
+.calculator{
+  background-color: lemonchiffon;
+  margin-left: 2%;
+}

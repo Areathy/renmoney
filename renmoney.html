@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Renmoney - Invest </title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="author" content="Henrietha C.N." />
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+      <link href="https://renbroker.com/retail_online/assets/css/style.css" rel="stylesheet">
+
+      <link rel="shortcut icon" href="http://renbrokerstaging.com/images/favicon.png"/>
+      <link rel="stylesheet" type="text/css" href="renmoney.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="renMoney__background" >
+
+      <nav class="navbar container navbar-fixed-top" role="navigation" > 
+          <a class="navbar-brand" href="/">
+              <img src="https://renbroker.com/retail_online/assets/img/brand/renmoney_logo.png" alt="Logo" href="/"/ width="200px">
+          </a>
+
+        <ul class="navbar-nav   mt-2 mt-lg-0" id="nbar">
+          <li class="nav-item">
+            <a class="nav-link" href="https://onboard.renmoney.com"><i class="fas fa-user-plus"></i> Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://renbroker.com/retail_online/login"><i class="fas fa-lock"></i> Sign In</a>
+          </li>
+        </ul>
+      </nav>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">          
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner col-lg-12 text-white">
+
+                  <div class="container__header caption item active" id="product_info" style="width:100%;">
+                    Earn amazing and competitive rate(s) on your Savings & Investments                
+                  </div>
+
+                <div class="container__header caption item" style="width:100%;" id="product_info">
+                  In just 3 simple steps you'll be on your way to financial freedom
+                  <button id="btn-small" class="btn btn-primary" onclick="gotoCalculate('calculate.html')">Invest Now</button>
+                </div>
+              </div>
+          
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>
+            <!-- Calculator -->
+      <div class="col-lg-5 my-5 pt-2 pb-4 card calculator">
+        <form class="container__form calculator" action="https://renbroker.com/retail_online/review" method="POST">
+        <h6 class="text-center renmoney__calculate">Investment Calculator</h6>
+        <label for="select" class="product">Select Option</label>
+        <span class="float-right text-warning"><small id="productmin"></small><p style="font-size: 85%;">Max NGN 10,000,000</p></span>
+        <select class="form-control micro" name="product" id="product">
+            <option selected value="SV_FIXED_DEPOSIT">Fixed Deposit</option>
+            <option value="SV_RENFLEX">Renflex Savings</option>
+        </select>
+
+      
+        <div class="form-row mt-3" >
+            <div class="form-group col-md-6">
+                <label for="inputPassword4" class="product">Amount</label>
+                <div class="input-group">
+                    <input type="text" placeholder="e.g 300000" class="form-control micro" name="amount" id="calamt" style="text-align: right;" required>
+                    <div class="input-group-append bg-white">
+                        <span class="input-group-text bg-white text-success ngn">&#8358;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                
+                <div id="tenorselector"></div>
+            </div>
+    
+        </div>  
+
+      <div>
+          <label class="product">Age</label><br>
+          <input type="radio" name="age" value="18 to 59" checked> 18 to 59<br>
+          <input type="radio" name="age" value="60 and above"> >= 60<br>
+      </div>
+
+      <div class="form-group">
+          <label for="exampleInputEmail1" class="product">Email address</label>
+          <input type="email" class="form-control micro" name="email" aria-describedby="emailHelp" placeholder="e.g. chidinma@renmoney.com" required>
+      </div>
+
+
+      <button type="button" class="btn btn-primary btn__continue btn-lg btn-block" id="submit_calculator">Continue</button>
+  </form>
+
+  <div id="calculatorholder">
+      <label for="inputEmail4" class="product">Duration</label>
+      <select class="form-control micro" name="tenor">
+          <option value="30">30 Days</option> 
+          <option value="60">60 Days</option>
+          <option selected value="90">90 Days</option>
+          <option value="180">180 Days</option>
+          <option value="270">270 Days</option>
+          <option value="360">360 Days</option>
+      </select>
+  </div>
+
+  <div id="tenor365">
+      <input type="hidden" name="tenor" value="12" required>
+  </div>
+              </div>
+          </div>
+      </section>
+  </div>
+
+
+  <div>
+      <div class="row renmoney__shade no-gutters">
+          <div class="col-lg-6"></div>
+          <div class="renmoney__format pt-3 pb-3 col-lg-6">
+              <div class="row container">
+                  <div class="renmoney__low col-lg-5">invest with as low as</div>
+                  <div class="renmoney__low">with an interest rate</div>
+              </div>
+              <div class="row container second-ren">
+                  <div class="renmoney__fifty col-lg-5 sideInfo"><span class="renmoney__fifty">₦</span>50,000</div>
+                  <div class="renmoney__fifty sideInfo">As High as 17%</div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="renmoney__middle" style="border-top: 50px solid #982b05;"> 
+      <div class="text-center renmoney__work pt-5">how it works</div>
+      <div class="container box"> 
+          <img src="https://renbroker.com/retail_online/assets/img/Points.svg" alt="Points" class="ren-points"/>
+          <div class="row pt-4 mt-2 points-check">
+              <div class="col-lg-4 card-col dashboard__plank">
+                  <div class="renmoney__display d-flex justify-content-between align-items-center">
+                      <img src="https://renbroker.com/retail_online/assets/img/InterestImage.svg" alt="Calculate" />
+                      <div class="renmoney-fix">
+                          <div class="renmoney-select mb-2"><h5>Calculate</h5></div>
+                          <div class="renmoney-loan">Use our simple calculator to choose the investment that suits you.</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 card-col dashboard__plank">
+                  <div class="renmoney__display d-flex justify-content-between align-items-center">
+                      <img src="https://renbroker.com/retail_online/assets/img/Product.svg" alt="Product" />
+                      <div class="renmoney-fix">
+                          <div class="renmoney-select mb-2"><h5>Create</h5></div>
+                          <div class="renmoney-loan">Fill out your details to create a profile in less than 5 minutes.</div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 card-col dashboard__plank">
+                  <div class="renmoney__display d-flex justify-content-between align-items-center">
+                      <img src="https://renbroker.com/retail_online/assets/img/Third.svg" alt="Invest" />
+                      <div class="renmoney-fix">
+                          <div class="renmoney-select mb-2"><h5>Fund</h5></div>
+                          <div class="renmoney-loan">Fund your account via a bank transfer or your debit card. Relax and watch your money grow.</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    
+  </div>
+  <div class="renMoney__main container pb-5 mb-5">
+  <div class="text-center ren-head" style="padding-top: 100px;">Choose your preferred investment option</div>
+  <!-- <div class="text-center ren-text">Just in 3 easy steps,you'll be on your way to financial freedom</div> -->
+  <div class="row container">
+      <div class="col-lg-8 mt-5 pt-5">
+          <img src="https://renbroker.com/retail_online/assets/img/Group_1.png" alt="Group1" />
+          <div class="grp-header">Renflex Savings Account</div>
+          <div class="grp-text">Earn 10% per annum as you save towards a goal.</div>
+      </div>
+      <div class="col-lg-4 mt-5 pt-5 ">
+              <img src="https://renbroker.com/retail_online/assets/img/Vector.png" alt="Vector" class="grp-cover"/>
+      </div>
+  </div>
+  <div class="row container">
+      <div class="col-lg-8 mt-5 pt-5 ">
+          <img src="https://renbroker.com/retail_online/assets/img/Hands.png" alt="Vector" class="grp-cover" />
+      </div>
+      <div class="col-lg-4 mt-5 pt-5">
+          <img src="https://renbroker.com/retail_online/assets/img/Group_2.png" alt="Group1" />
+          <div class="grp-header">Fixed Deposit</div>
+          <div class="grp-text">Invest in renmoney fixed deposits and earn up to 17% interest per annum. Tenors range from 90 days to 360 days.</div>
+      </div>
+  </div>
+  <!-- <div class="row container">
+      <div class="col-lg-8 mt-5 pt-5">
+          <img src="" alt="Group1" />
+          <div class="grp-header">Fund</div>
+          <div class="grp-text">Fund your account via a bank transfer or your debit card. Relax and watch your money grow</div>
+      </div>
+      <div class="col-lg-4 mt-5 pt-5 ">
+              <img src="" alt="Vector" class="grp-wrapper" />
+      </div>
+  </div> -->
+  </div>
+  <div class="renMoney__sub py-5">
+      <div class="text-center ren-head">Invest in Minutes.</div>
+      <div class="text-center ren-text">Speed matters. Use our investment calculator to calculate your potential interest over a period of time</div>
+      <div class="text-center pb-4">
+          <button id="btn-small" href="#" class="btn btn-primary" href=>Invest Now</button>
+      </div>
+      
+  </div>        <footer>
+              <div class="container my-5 bg-white">
+                  <div class="row text-center justify-content-between">   
+                      <div class="col-md-3">    
+                          <ul class="menu list-inline">
+                              <li><a href="#">©2019 Renmoney. All Rights Reserved</a></li>
+                          </ul>
+                      </div>
+
+                      <div class="col-md-5">    
+                          <ul class="menu list-inline">
+                              <li class="list-inline-item"><a href="#">About</a></li>
+                              <li class="list-inline-item"><a href="#">Careers</a></li>
+                              <li class="list-inline-item"><a href="#">FAQ</a></li>
+                              <li class="list-inline-item"><a href="/termsandconditions">T&amp;Cs</a></li>
+                              <li class="list-inline-item"><a href="mailto:hello@renmoney.com">hello@renmoney.com</a></li>
+                          </ul>
+                      </div>
+
+                      <div class="col-md-2">                            
+                          <ul class="menu list-inline">
+                              <li class="list-inline-item"><a href="tel:07005000500">Telephone 0700 5000 500</a></li>
+                          </ul>
+                      </div>
+
+                      <div class="col-md-2">
+                          <ul class="menu list-inline">
+                              <li class="list-inline-item"><a href="https://twitter.com/renmoney" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                              <li class="list-inline-item"><a href="https://instagram.com/renmoneyng" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                              <li class="list-inline-item"><a href="https://facebook.com/renmoney" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="row justify-content-center">
+                      <div class="col-8 renmoney__rep text-center">Representative example: Loan amount of N1,000,000 borrowed for 12 months. Annual Interest Rate: 33.9%. Management fees (charged upfront): N35,700. Total amount payable:N1,388,467. Fees are subject to change and will be affected by customer risk</div>
+                  </div>
+              </div> 
+          </footer>
+          
+          
+      <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+      </script> -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+          integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+      </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+      </script>
+      <script src="https://renbroker.com/retail_online/assets/js/parsley.js"></script>
+      <script src="https://renbroker.com/retail_online/assets/js/jquery.inputmask.min.js"></script>
+      <script src="https://renbroker.com/retail_online/assets/js/app.js"></script>
+      <script src="renmoney.js"></script>
+  </body>
+
+</html>
