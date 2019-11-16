@@ -1,5 +1,14 @@
 body{
   background-color: lemonchiffon !important;
+  box-sizing: border-box;
+}
+
+.renMoney__background{
+  width: 100% !important;
+}
+
+.imgl{
+  width: 110%;
 }
 
 /* Navbar */
@@ -42,8 +51,43 @@ color: #F05822;
 }
 
 .sideInfo{
-  font-size: 200%;
+  font-size: 250%;
 }
+
+@media (max-width: 768px) {
+
+  .slide{
+    margin-top: 30%;
+  }
+  
+  .caption{
+    padding: 6%;
+    font-size: 220%;
+  }
+  
+  .carousel-control{
+    margin-bottom: 9%;
+  }
+
+  .side{
+    top: auto;
+    right: auto;
+  }
+
+  .sideContain{
+    margin-top: 20px !important;
+    margin-left: 40px !important;
+  }
+
+}
+
+@media (min-width: 769px) {
+  .sideContain2{
+    display: none;
+  }
+}
+
+
 
 /* Calculator */
 .calculator{
